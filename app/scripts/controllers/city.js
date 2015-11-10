@@ -8,8 +8,6 @@ angular.module("zyringApp")
     
     $scope.pages = [];
     
-    $scope.markers = [];
-    
     $scope.cityName = cityName;
     
     $scope.cityDetails = cityDetails;
@@ -43,8 +41,10 @@ angular.module("zyringApp")
         }
         
         $rootScope.list = $scope.pages[0];
+        $window.initialize();
     });
     
+    //set page for the pagination
     $scope.setPage = function(pageNum) {
         $rootScope.list = $scope.pages[pageNum-1];
         $window.initialize();
@@ -52,6 +52,9 @@ angular.module("zyringApp")
     
 }])
 
+/*
+*  I couldn't get the Google Angular directive to work so I created my own
+*/
 .directive("googleMapAuth", ["$window", "$rootScope", function($window, $rootScope) {
     var script = $window.document.createElement("script");
 
@@ -62,7 +65,6 @@ angular.module("zyringApp")
             zoom: 10
         });
         angular.forEach($rootScope.list, function(item) {
-            console.log(item);
             var lat = parseFloat(item.latitude),
                 long = parseFloat(item.longitude),
                 point = new google.maps.LatLng(lat, long),
