@@ -1,0 +1,10 @@
+<div id="apartment-search-container">
+    <h3>Where do you want to look for apartments?</h3>
+    <div class="row">
+        <div ng-repeat="city in cityDictionary" class="city">                     <a ng-href="#/city/{{city.name}}">
+                <img ng-src="{{city.image}}" alt="{{city.name}}" class="city-image morph">
+                <div class="city-name"><h1>{{city.name}}</h1></div>
+            </a>
+        </div>
+    </div>
+</div>

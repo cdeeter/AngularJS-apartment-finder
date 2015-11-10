@@ -1,0 +1,40 @@
+<div id="apartment-container">
+    <div class="row" style="width:60%">
+        <div class="pull-left">
+            <h1>{{apartmentDetails.title}}</h1>
+            {{apartmentDetails.street}},<br/>
+            {{apartmentDetails.city}}, {{apartmentDetails.region}} {{apartmentDetails.zipcode}}<br/><br/>
+            <h4>Contact: {{apartmentDetails.contact}}</h4>
+        </div>
+        <div class="pull-right">
+            <img ng-src="{{apartmentDetails.thumbnail}}" alt="{{apartmentDetails.title}}">
+        </div>
+    </div>
+    <br/><br/>
+    <div class="row">
+        <div class="col-xs-3">
+            <h4>Apartment Features: </h4>
+            <ul>
+                <li ng-repeat="feature in apartmentDetails.features">{{feature}}</li>
+            </ul>
+        </div>
+        <div class="col-xs-3">
+            <h4>Special Features: </h4>
+            <ul>
+                <li ng-repeat="specialFeature in apartmentDetails.specialFeatures">{{specialFeature}}</li>
+            </ul>
+        </div>
+        <div class="col-xs-3">
+            <h4>Community Features: </h4>
+            <ul>
+                <li ng-repeat="commFeature in apartmentDetails.communityFeatures">{{commFeature}}</li>
+            </ul>
+        </div>
+        <div class="col-xs-3">
+            <h4>Amenities: </h4>
+            <ul>
+                <li ng-repeat="amenity in apartmentDetails.amenities track by $index">{{amenity}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

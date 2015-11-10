@@ -1,0 +1,29 @@
+<div id="city-details-container">
+    <h3>{{cityName}}</h3>
+    <div id="map" style="height:350px;width:100%;" google-map-auth></div>
+    <div class="row">
+        <uib-pagination total-items="totalItems" items-per-page="8" ng-model="currentPage" ng-change="setPage(currentPage)"></uib-pagination>
+        <br/>
+        <div class="item" ng-repeat="item in list track by $index">
+            <br/>
+            <h4><a ng-href="#/apartment/{{item.id}}"> {{item.title}} </a></h4>
+            <div class="item-contact">
+               Contact: {{item.contact}}
+            </div>
+            <img ng-src="{{item.thumbnail}}" alt="{{item.title}}" class="item-thumbnail">
+            <div class="item-info-container">
+                <div class="item-info">
+                    {{item.floorplan}}<br/>
+                    {{item.price}}
+                </div>
+            </div>
+            <div class="item-address">
+                {{item.street}},<br/>
+                {{item.city}}, {{item.region}} {{item.zip}}
+            </div>
+            <div class="clearfix" ng-if="$index % 4"></div>
+        </div>
+    </div>
+    <br/><br/><br/>
+    <uib-pagination total-items="totalItems" items-per-page="8" ng-model="currentPage" ng-change="setPage(currentPage)"></uib-pagination>
+</div>
