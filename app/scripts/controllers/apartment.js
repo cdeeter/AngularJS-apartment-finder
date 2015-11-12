@@ -10,8 +10,6 @@ angular.module("zyringApp")
     $scope.apartment.$promise.then(function(result) {
 
         $scope.apartmentDetails = result;
-    
-        console.log($scope.apartmentDetails);
     });
     
 }]);

@@ -10,36 +10,31 @@
 angular.module("zyringApp")
     
 .controller("MainCtrl", function ($scope) {
-    $scope.awesomeThings = [
-      "HTML5 Boilerplate",
-      "AngularJS",
-      "Karma"
-    ];
     
     $scope.cityDictionary = [
         {
             "name": "Seattle",
-            "image": "../images/seattle.jpg"
+            "image": "images/seattle.jpg"
         },
         {
             "name": "Redmond",
-            "image": "../images/redmond.jpg"
+            "image": "images/redmond.jpg"
         },
         {
             "name": "Bellevue",
-            "image": "../images/bellevue.jpg"
+            "image": "images/bellevue.jpg"
         },
         {
             "name": "Kirkland",
-            "image": "../images/kirkland.jpg"
+            "image": "images/kirkland.jpg"
         },
         {
             "name": "Tacoma",
-            "image": "../images/tacoma.jpg"
+            "image": "images/tacoma.jpg"
         },
         {
             "name": "Olympia",
-            "image": "../images/olympia.jpg"
+            "image": "images/olympia.jpg"
         }
     ]
   });
